@@ -191,6 +191,48 @@ The base path for these endpoints is `/api/users`.
     curl -X DELETE http://localhost:8080/api/users/1
     ```
 
+### Order API Endpoints
+
+The base path for these endpoints is `/api/orders`.
+
+#### 1. GET /
+
+*   **Description:** Get all orders.
+*   **Method:** `GET`
+*   **Example Usage (using curl):**
+    ```bash
+    curl http://localhost:8080/api/orders
+    ```
+
+#### 2. GET /{id}
+
+*   **Description:** Get an order by ID.
+*   **Method:** `GET`
+*   **Example Usage (using curl):**
+    ```bash
+    curl http://localhost:8080/api/orders/1
+    ```
+
+#### 3. POST /
+
+*   **Description:** Create a new order.
+*   **Method:** `POST`
+*   **Example Usage (using curl):**
+    ```bash
+    curl -X POST http://localhost:8080/api/orders \
+    -H "Content-Type: application/json" \
+    -d '{"userId": 1, "items": [{"productId": 1, "quantity": 2}]}'
+    ```
+
+#### 4. DELETE /{id}
+
+*   **Description:** Delete an order by ID.
+*   **Method:** `DELETE`
+*   **Example Usage (using curl):**
+    ```bash
+    curl -X DELETE http://localhost:8080/api/orders/1
+    ```
+
 ## API Documentation
 
 This project uses SpringDoc to generate OpenAPI documentation. You can access the Swagger UI to view and interact with the API endpoints.
